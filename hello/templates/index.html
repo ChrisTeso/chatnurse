@@ -5,19 +5,19 @@
 
 <div class="header">
   <div class="logo">
-    <h1>Virtual Recruiter</h1>
+    <h1>AI Recruiter</h1>
   </div>
 </div>
 
 <div class="main">
-  <p class="credits">This is an experiment in using AI to answer common clinician questions.</p>
+  <p class="credits">This is an MLab experiment using AI to answer clinician questions</p>
 
   <form action="/ask" method="post">
     {% csrf_token %}
     <textarea name="question" id="question">{{ default_question }}</textarea>
 
     <div class="buttons" {% if answer %}style="display: none"{% endif %}>
-      <button type="submit" id="ask-button">Ask question</button>
+      <button type="submit" id="ask-button">Ask Me</button>
       <!-- <button id="lucky-button" style="background: #eee; border-color: #eee; color: #444;" data>I'm feeling lucky</button> -->
     </div>
   </form>
@@ -108,7 +108,7 @@
         audio.volume = 0.3;
         audio.play();
 
-        askButton.textContent = "Ask question";
+        askButton.textContent = "Ask Me";
         askButton.disabled = false;
 
         window.newQuestionId = data.id;
@@ -121,7 +121,7 @@
 </script>
 
 <footer>
-  <p class="credits">Project by MLab</p>
+  <p class="credits">Project by MLab using Open AI ChatGPT</p>
 </footer>
 
 {% endblock %}
