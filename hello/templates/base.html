@@ -6,7 +6,7 @@
   <title>MLab | AI Recruiter</title>
   <link rel="shortcut icon" href="{% static 'favicon.svg' %}"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:site" content="@shl"/>
+  <meta name="twitter:site" content="@christeso"/>
   <meta name="og:title" content="Virtual Recruiter"/>
   <meta name="og:description" content="Ask questions, get answers"/>
   <meta name="og:image" content="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static 'social.png' %}"/>
@@ -15,6 +15,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <style type="text/css">
       html {
+        background-color: #333;
         max-width: 70ch;
         /* larger spacing on larger screens, very small spacing on tiny screens */
         padding: calc(1vmin + .5rem);
@@ -55,8 +56,9 @@
       .logo h1 {
         font-weight: bold;
         margin-bottom: 0;
-        font-size: 24px;
+        font-size: 34px;
         line-height: 36px;
+        color: #eee;
       }
 
       .logo img {
@@ -108,6 +110,9 @@
         justify-content: center;
         gap: 1rem;
       }
+      #answer-container {
+        color: #eee;
+      }
 
       p {
         display: block;
@@ -154,7 +159,7 @@
 
       .credits {
         display: block;
-        color: #777;
+        color: #999;
         text-align: center;
       }
 
@@ -179,14 +184,14 @@
       }
   </style>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSYZ5MWD1H"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSYZ5MWD1H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-XSYZ5MWD1H');
-  </script>
+  </script> -->
 </head>
 <body>
 
