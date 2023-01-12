@@ -164,12 +164,12 @@ def ask(request):
         previous_question.save()
         return JsonResponse({ "question": previous_question.question, "answer": previous_question.answer, "audio_src_url": audio_src_url, "id": previous_question.pk })
 
-    df = pd.read_csv('book.pdf.pages.csv')
-    document_embeddings = load_embeddings('book.pdf.embeddings.csv')
+    df = pd.read_csv('Embeddings.pdf.pages.csv')
+    document_embeddings = load_embeddings('Embeddings.pdf.embeddings.csv')
     answer, context = answer_query_with_context(question_asked, df, document_embeddings)
 
-    project_uuid = '6314e4df'
-    voice_uuid = '0eb3a3f1'
+    project_uuid = '7ac56bc3'
+    voice_uuid = '4e42dcc8'
 
     response = Resemble.v2.clips.create_sync(
         project_uuid,
