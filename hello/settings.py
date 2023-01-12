@@ -28,9 +28,9 @@ else:
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if not IS_HEROKU:
-    DEBUG = False
+    DEBUG = True
 
-CSRF_TRUSTED_ORIGINS = ["https://www.askmybook.com", "http://127.0.0.1"]
+CSRF_TRUSTED_ORIGINS = ["https://chatnurse.herokuapp.com/", "http://127.0.0.1"]
 
 # Application definition
 
