@@ -21,7 +21,7 @@ import os
 import pickle
 from transformers import GPT2TokenizerFast
 
-openai.api_key = "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"
+openai.api_key = os.environ["OPENAI_API_KEY"]
 
 COMPLETIONS_MODEL = "text-davinci-003"
 
