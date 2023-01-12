@@ -23,9 +23,9 @@
   </form>
 
   {% if answer %}
-    <p id="answer-container" class="hidden showing"><strong>Answer:</strong> <span id="answer">{{ answer }}</span><div class="buttons"><button id="ask-another-button" style="display: block;">Ask another question</button></div></p>
+    <p id="answer-container" class="hidden showing"><strong>Answer:</strong> <span id="answer">{{ answer }}</span><div class="buttonsagain"><button id="ask-another-button" style="display: block;">Ask another question</button></div></p>
   {% else %}
-    <p id="answer-container" class="hidden"><strong>Answer:</strong> <span id="answer"></span><div class="buttons"><button id="ask-another-button" style="display: none;">Ask another question</button></div></p>
+    <p id="answer-container" class="hidden"><strong>Answer:</strong> <span id="answer"></span><div class="buttonsagain"><button id="ask-another-button" style="display: none;">Ask another question</button></div></p>
   {% endif %}
 
   <audio id="audio" controls autoplay>
