@@ -10,7 +10,7 @@
 </div>
 
 <div class="main">
-  <p class="credits">This is an experiment in using AI to answer common clinician questions. It also uses an AI voice to answer using a model I trained using my own voice.</p>
+  <p class="credits">This is an experiment in using AI to answer common clinician questions. It also uses an AI voice to answer using a model I trained on my own voice.</p>
 
   <form action="/ask" method="post">
     {% csrf_token %}
@@ -18,7 +18,7 @@
 
     <div class="buttons" {% if answer %}style="display: none"{% endif %}>
       <button type="submit" id="ask-button">Ask question</button>
-      <button id="lucky-button" style="background: #eee; border-color: #eee; color: #444;" data>I'm feeling lucky</button>
+      <!-- <button id="lucky-button" style="background: #eee; border-color: #eee; color: #444;" data>I'm feeling lucky</button> -->
     </div>
   </form>
 
