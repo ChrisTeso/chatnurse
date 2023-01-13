@@ -5,12 +5,13 @@
 
 <div class="header">
   <div class="logo">
+    <div style="text-align: center;"><img src="{% static 'mlab.png' %}" loading="lazy" /></div>
     <h1>AI Recruiter</h1>
   </div>
 </div>
 
 <div class="main">
-  <p class="credits">This is an MLab experiment using AI to answer clinician questions</p>
+  <!-- <h2 style="font-size: 24px;color: #888;text-align: center;font-weight: 400;">An experiment using AI to talk with clinicians</h2> -->
 
   <form action="/ask" method="post">
     {% csrf_token %}
@@ -121,7 +122,10 @@
 </script>
 
 <footer>
-  <p class="credits">Project by MLab using Open AI ChatGPT</p>
+  {% if answer %}
+    <p class="credits">Didn't like my answer? <a onclick="location.href=this.href+'&body=This response was not good - '+window.location.href;return false;" href="mailto:chris.teso@medicalsolutions.com?subject=AI Response">Let me know</a>.</p>
+  {% endif %}
+  <p class="credits">An experiment using AI to talk with clinicians by MLab using Open AI ChatGPT API trained on Medical Solutions FAQs</p>
 </footer>
 
 {% endblock %}
