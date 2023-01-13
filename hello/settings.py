@@ -30,7 +30,7 @@ else:
 if not IS_HEROKU:
     DEBUG = True
 
-CSRF_TRUSTED_ORIGINS = ["https://chatnurse.herokuapp.com/", "http://127.0.0.1"]
+CSRF_TRUSTED_ORIGINS = ["https://chatnurse.herokuapp.com/", "http://127.0.0.1:5001"]
 
 # Application definition
 

@@ -168,23 +168,25 @@ def ask(request):
     document_embeddings = load_embeddings('Embeddings.pdf.embeddings.csv')
     answer, context = answer_query_with_context(question_asked, df, document_embeddings)
 
-    project_uuid = '7ac56bc3'
-    voice_uuid = '4e42dcc8'
+    # project_uuid = '7ac56bc3'
+    # voice_uuid = '4e42dcc8'
 
-    response = Resemble.v2.clips.create_sync(
-        project_uuid,
-        voice_uuid,
-        answer,
-        title=None,
-        sample_rate=None,
-        output_format=None,
-        precision=None,
-        include_timestamps=None,
-        is_public=None,
-        is_archived=None,
-        raw=None
-    )
+    # response = Resemble.v2.clips.create_sync(
+    #     project_uuid,
+    #     voice_uuid,
+    #     answer,
+    #     title=None,
+    #     sample_rate=None,
+    #     output_format=None,
+    #     precision=None,
+    #     include_timestamps=None,
+    #     is_public=None,
+    #     is_archived=None,
+    #     raw=None
+    # )
 
+    # print(response['success'])
+    # print("page text: " + response)
 
     # question = Question(question=question_asked, answer=answer, context=context, audio_src_url=response['item']['audio_src'])
     question = Question(question=question_asked, answer=answer, context=context)
