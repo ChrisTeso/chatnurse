@@ -24,7 +24,7 @@
   </form>
 
   {% if answer %}
-    <p id="answer-container" class="hidden showing"><strong>Answer:</strong> <span id="answer">{{ answer }}</span><div class="buttonsagain"><button id="ask-another-button" style="display: block;">Ask another question</button></div></p>
+    <p id="answer-container" class="hidden showing"><strong>Answer:</strong> <span id="answer">{{ answer }}</span><div class="buttonsagain"><button id="ask-another-button" style="display: block;">Ask another question</button></div><div class="credits" style="margin-top: 5px;color: #555;">Didn't like my answer? <a onclick="location.href=this.href+'&body=This response was not good - '+window.location.href;return false;" href="mailto:chris.teso@medicalsolutions.com?subject=AI Response">Let me know</a>.</div></p>
   {% else %}
     <p id="answer-container" class="hidden"><strong>Answer:</strong> <span id="answer"></span><div class="buttonsagain"><button id="ask-another-button" style="display: none;">Ask another question</button></div></p>
   {% endif %}
@@ -122,10 +122,7 @@
 </script>
 
 <footer>
-  {% if answer %}
-    <p class="credits">Didn't like my answer? <a onclick="location.href=this.href+'&body=This response was not good - '+window.location.href;return false;" href="mailto:chris.teso@medicalsolutions.com?subject=AI Response">Let me know</a>.</p>
-  {% endif %}
-  <p class="credits">An experiment using AI to talk with clinicians by MLab using Open AI ChatGPT API trained on Medical Solutions FAQs</p>
+  <p class="credits">An MLab experiment using AI to talk with clinicians using Open AI API trained on Medical Solutions FAQs</p>
 </footer>
 
 {% endblock %}
