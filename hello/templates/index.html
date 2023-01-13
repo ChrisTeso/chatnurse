@@ -24,9 +24,9 @@
   </form>
 
   {% if answer %}
-    <p id="answer-container" class="hidden showing"><strong>Answer:</strong> <span id="answer">{{ answer }}</span><div class="buttonsagain"><button id="ask-another-button" style="display: block;">Ask another question</button></div><div class="credits" style="margin-top: 5px;color: #555;">Didn't like my answer? <a onclick="location.href=this.href+'&body=This response was not good - '+window.location.href;return false;" href="mailto:chris.teso@medicalsolutions.com?subject=AI Response">Let me know</a>.</div></p>
+    <p id="answer-container" class="hidden showing"><strong>Answer:</strong> <span id="answer">{{ answer }}</span><div class="buttonsagain"><button id="ask-another-button" style="display: block;">Ask another question</button></div><div id="nolikey" class="credits hidden showing" style="margin-top: 5px;color: #555;">Don't like my answer? <a onclick="location.href=this.href+'&body=This response was not good - '+window.location.href;return false;" href="mailto:chris.teso@medicalsolutions.com?subject=AI Response">Let me know</a>.</div></p>
   {% else %}
-    <p id="answer-container" class="hidden"><strong>Answer:</strong> <span id="answer"></span><div class="buttonsagain"><button id="ask-another-button" style="display: none;">Ask another question</button></div></p>
+    <p id="answer-container" class="hidden"><strong>Answer:</strong> <span id="answer"></span><div class="buttonsagain"><button id="ask-another-button" style="display: none;">Ask another question</button></div><div id="nolikey" class="credits hidden" style="margin-top: 5px;color: #555;">Don't like my answer? <a onclick="location.href=this.href+'&body=This response was not good - '+window.location.href;return false;" href="mailto:chris.teso@medicalsolutions.com?subject=AI Response">Let me know</a>.</div></p>
   {% endif %}
 
   <audio id="audio" controls autoplay>
@@ -61,6 +61,7 @@
     $("textarea").bind('input propertychange', function(e) {
       $(".buttons").show();
       document.getElementById('answer-container').classList.remove("showing");
+      document.getElementById('nolikey').classList.remove("showing");
       clearTimeout(window.answerShower);
       document.getElementById('audio').pause();
       $("#ask-another-button").css("display", "none");
@@ -69,6 +70,7 @@
     $("#ask-another-button").click(function(e) {
       $(".buttons").show();
       document.getElementById('answer-container').classList.remove("showing");
+      document.getElementById('nolikey').classList.remove("showing");
       clearTimeout(window.answerShower);
       document.getElementById('audio').pause();
       $("#ask-another-button").css("display", "none");
@@ -101,6 +103,7 @@
         var answer = document.getElementById('answer');
         answer.innerHTML = "";
         document.getElementById('answer-container').classList.add("showing");
+        document.getElementById('nolikey').classList.add("showing");
 
         window.answerShower = setTimeout(function() {
           showText("#answer", data.answer, 0);
@@ -122,7 +125,7 @@
 </script>
 
 <footer>
-  <p class="credits">An MLab experiment using AI to talk with clinicians using Open AI API trained on Medical Solutions FAQs</p>
+  <p class="credits">An MLab experiment using AI to talk with clinicians using Open AI ChatGPT API trained on Medical Solutions FAQs</p>
 </footer>
 
 {% endblock %}
