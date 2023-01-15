@@ -42,7 +42,7 @@
 
     var showText = function(target, message, index) {
       if (index < message.length) {
-        var interval = randomInteger(30, 70);
+        var interval = randomInteger(20, 60);
         $(target).append(message[index++]);
         setTimeout(function () { showText(target, message, index); }, interval);
       } else {
