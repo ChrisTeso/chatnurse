@@ -15,7 +15,7 @@
 
   <form action="/ask" method="post">
     {% csrf_token %}
-    <textarea name="question" id="question">{{ default_question }}</textarea>
+    <textarea name="question" style="background-color: #dcdcdc;" id="question">{{ default_question }}</textarea>
 
     <div class="buttons" {% if answer %}style="display: none"{% endif %}>
       <button type="submit" id="ask-button">Ask Us</button>
