@@ -6,7 +6,7 @@
 <div class="header">
   <div class="logo">
     <div style="text-align: center;"><img src="{% static 'medsol.png' %}" loading="lazy" /></div>
-    <!-- <h1>Ask me anything</h1> -->
+    <h1>How can we help you?</h1>
   </div>
 </div>
 
@@ -19,7 +19,7 @@
 
     <div class="buttons" {% if answer %}style="display: none"{% endif %}>
       <button type="submit" id="ask-button">Ask Me</button>
-      <!-- <button id="lucky-button" style="background: #eee; border-color: #eee; color: #444;" data>I'm feeling lucky</button> -->
+      <button id="lucky-button" style="background: #444; color: #dcdcdc;border:1px solid #222" data>Surprise Me</button>
     </div>
   </form>
 
@@ -52,7 +52,18 @@
     }
 
     $("#lucky-button").click(function(e) {
-      var options = ["What is a minimalist entrepreneur?", "What is your definition of community?", "How do I decide what kind of business I should start?"],
+      var options = [
+      "How do I become a Traveler with Medical Solutions?",
+    "Am I obligated to travel with Medical Solutions if I fill out an application?",
+    "Is there a fee to become a Traveler for Medical Solutions?",
+    "Where can I find travel healthcare jobs and what jobs do you offer?",
+    "How long are travel healthcare assignments?",
+    "What about state licensing?",
+    "What happens after my assignment is over?",
+    "What are the benefits of traveling vs a permanent position?",
+    "What do I do if I get injured on the job?",
+    "How much will I be paid?"
+      ],
           random = ~~(Math.random() * options.length);
 
       $("textarea").val(options[random]);
