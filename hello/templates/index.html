@@ -19,7 +19,7 @@
 
     <div class="buttons" {% if answer %}style="display: none"{% endif %}>
       <button type="submit" id="ask-button">Ask Us</button>
-      <button id="lucky-button" style="background: #444; color: #dcdcdc;" data>Surprise Me</button>
+      <button id="lucky-button" class="hidden showing" style="background: #444; color: #dcdcdc;" data>Surprise Me</button>
     </div>
   </form>
 
@@ -73,6 +73,11 @@
       $(".buttons").show();
       document.getElementById('answer-container').classList.remove("showing");
       document.getElementById('nolikey').classList.remove("showing");
+      if (document.getElementById("question").value != "") {
+        document.getElementById('lucky-button').classList.remove("showing");
+      } else {
+        document.getElementById('lucky-button').classList.add("showing");
+      }
       clearTimeout(window.answerShower);
       document.getElementById('audio').pause();
       $("#ask-another-button").css("display", "none");
@@ -115,6 +120,7 @@
         answer.innerHTML = "";
         document.getElementById('answer-container').classList.add("showing");
         document.getElementById('nolikey').classList.add("showing");
+        // document.getElementById('answer-container').classList.add("showing");
 
         window.answerShower = setTimeout(function() {
           showText("#answer", data.answer, 0);
