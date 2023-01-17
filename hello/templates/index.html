@@ -5,7 +5,7 @@
 
 <div class="header">
   <div class="logo">
-    <div style="text-align: center;"><img src="{% static 'medsol.png' %}" loading="lazy" /></div>
+    <div style="text-align: center;"><a href="/"><img src="{% static 'medsol.png' %}" loading="lazy" /></a></div>
     <h1>How can we help you?</h1>
   </div>
 </div>
@@ -101,7 +101,7 @@
       }
 
       let askButton = document.getElementById("ask-button");
-      askButton.textContent = "Asking...";
+      askButton.innerHTML = "<img src=\"/static/loading.gif\" width=\"12\"/> Asking...";
       askButton.disabled = true;
 
       $.ajax({
@@ -129,7 +129,7 @@
         audio.volume = 0.3;
         audio.play();
 
-        askButton.textContent = "Ask Us";
+        askButton.innerHTML = "Ask Us";
         askButton.disabled = false;
 
         window.newQuestionId = data.id;
