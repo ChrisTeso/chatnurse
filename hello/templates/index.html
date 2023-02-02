@@ -19,7 +19,7 @@
 
     <div class="buttons" {% if answer %}style="display: none"{% endif %}>
       <button type="submit" id="ask-button">Ask</button>
-      <button id="lucky-button" class="hidden showing" style="background: #444; color: #dcdcdc;" data></button>
+      <button id="lucky-button" class="hidden showing" style="background: #444; color: #dcdcdc;" data>Surprise Me</button>
     </div>
   </form>
 
@@ -101,7 +101,7 @@
       }
 
       let askButton = document.getElementById("ask-button");
-      askButton.innerHTML = "<img src=\"/static/loading.gif\" width=\"12\"/> Asking...";
+      askButton.innerHTML = "<img src=\"/static/loading.gif\" width=\"12\"/> Thinking...";
       askButton.disabled = true;
 
       $.ajax({
