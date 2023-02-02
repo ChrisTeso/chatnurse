@@ -18,8 +18,8 @@
     <textarea name="question" style="background-color: #dcdcdc;" id="question">{{ default_question }}</textarea>
 
     <div class="buttons" {% if answer %}style="display: none"{% endif %}>
-      <button type="submit" id="ask-button">Ask Us</button>
-      <button id="lucky-button" class="hidden showing" style="background: #444; color: #dcdcdc;" data>Surprise Me</button>
+      <button type="submit" id="ask-button">Ask</button>
+      <button id="lucky-button" class="hidden showing" style="background: #444; color: #dcdcdc;" data></button>
     </div>
   </form>
 
@@ -129,7 +129,7 @@
         audio.volume = 0.3;
         audio.play();
 
-        askButton.innerHTML = "Ask Us";
+        askButton.innerHTML = "Ask";
         askButton.disabled = false;
 
         window.newQuestionId = data.id;
